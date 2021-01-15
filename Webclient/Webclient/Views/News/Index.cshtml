@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Webclient.Models.News>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Thumb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            <img src="@Html.DisplayFor(modelItem => item.Thumb)" />
+        </td>
+        <td>
+            <p>@Html.DisplayFor(modelItem => item.Description)</p>
+            
+        </td>
+        <td>
+            
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            
+        </td>
+    </tr>
+}
+
+</table>
+<style>
+    p {
+        width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 20px;
+        -webkit-line-clamp: 5;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+    img{
+        width : 500px;
+    }
+</style>

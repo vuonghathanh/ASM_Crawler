@@ -1,0 +1,43 @@
+﻿@model Webclient.Models.News
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>News</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            
+        </dt>
+
+        <dd>
+            <h2 style="text-align:center;">@Html.DisplayFor(model => model.Title)</h2>
+        </dd>
+
+        <dt>
+            
+        </dt>
+
+        <dd>
+            <p style="text-align:center;"> <img src="@Html.DisplayFor(model => model.Thumb)" alt="Alternate Text" /></p>
+            
+        </dd>
+
+        <dt>
+            
+        </dt>
+
+        <dd>
+            <p style="align-content:center;letter-spacing:0.5px;line-height:1.5;font-size:16px;">@Html.DisplayFor(model => model.Description)</p>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    
+    @Html.ActionLink("Back to List", "Index")
+</p>
